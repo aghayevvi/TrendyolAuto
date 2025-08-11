@@ -10,5 +10,5 @@ Feature: Login to Trendyol website
     Then The user clicks the button.
 
     Examples:
-      | email               | password   |
-      | aghayevvi@gmail.com | Agayev2211 |
+      | email          | password  |
+      | test@gmail.com | Test.pass |

@@ -24,7 +24,7 @@ public class AdToCartStep {
         
     }
 
-    @And("The user selects size S")
+    @And("The user selects size")
     public void theUserSelectsSizeS() {
         adToCartPage.selectSizeS();
     }

@@ -36,7 +36,7 @@ public class SearchStep {
         searchPage.selectBrand();
     }
 
-    @Then("The user the XS size filter")
+    @Then("The user the size filter")
     public void selectSize() {
         searchPage.selectSize();
     }

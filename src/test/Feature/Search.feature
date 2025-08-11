@@ -6,4 +6,4 @@ Feature: Product search and filtering
     And The user on the Büyük Beden Elbise category on the results page
     And The user LC into the brand filter search box
     And The user the LC Waikiki brand
-    Then The user the XS size filter
+    Then The user the size filter
