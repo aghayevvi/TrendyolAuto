@@ -34,13 +34,12 @@ public class LoginPage extends BasePage {
     }
 
     public void enterPassword(String password) {
-        wait.until(ExpectedConditions.elementToBeClickable(passwordInput));
+        waitAndClick(passwordInput);
         passwordInput.sendKeys(password);
     }
 
     public void clickSubmitButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(submitButton));
-        submitButton.click();;
+        waitAndClick(submitButton);
     }
 
 }

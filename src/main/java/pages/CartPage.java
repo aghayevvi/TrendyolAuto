@@ -20,23 +20,27 @@ public class CartPage extends BasePage{
     @FindBy(xpath = "//*[@id=\"pb-container\"]/div/div[2]/div[2]/div/div[4]/button")
     private WebElement remove;
 
-    public void clickCart() throws InterruptedException {
-        Thread.sleep(2000);
-        cart.click();
+    @FindBy(id = "logo")
+    private WebElement logo;
+
+
+    public void clickCart() {
+        waitAndClick(cart);
     }
 
-    public void clickIncrease() throws InterruptedException {
-        Thread.sleep(1500);
-        increase.click();
+    public void clickIncrease() {
+        waitAndClick(increase);
     }
 
-    public void clickDecrease() throws InterruptedException {
-        Thread.sleep(1500);
-        decrease.click();
+    public void clickDecrease() {
+        waitAndClick(decrease);
     }
 
-    public void clickRemove() throws InterruptedException {
-        Thread.sleep(1500);
-        remove.click();
+    public void clickRemove() {
+        waitAndClick(remove);
+    }
+
+    public void clickLogo() {
+        waitAndClick(logo);
     }
 }

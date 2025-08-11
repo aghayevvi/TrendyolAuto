@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,6 +24,7 @@ public class BasePage {
         this.driver = DriverManager.getChromeDriver();
         this.js = (JavascriptExecutor) driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));  // sadece bir kez oluşturuluyor
+        PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
         PageFactory.initElements(driver, this);
     }
 
@@ -34,12 +36,12 @@ public class BasePage {
 
     public void waitAndClick(WebElement element) {
         try {
-            wait.until(ExpectedConditions.elementToBeClickable(element));  // class-level wait kullanılıyor
-            element.click();
+            wait.until(ExpectedConditions.elementToBeClickable(element)).click();
         } catch (RuntimeException e) {
             System.out.println("Element not found: " + e.getMessage());
         }
     }
+
 
     public void scrollToElement(WebElement element) {
         try {

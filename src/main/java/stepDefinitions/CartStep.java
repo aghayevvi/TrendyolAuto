@@ -15,22 +15,27 @@ public class CartStep {
     }
 
     @Given("The user clicks on the cart button")
-    public void theUserClicksOnTheCartButton() throws InterruptedException {
+    public void theUserClicksOnTheCartButton() {
         cartPage.clickCart();
     }
 
     @When("The user increases the product quantity")
-    public void theUserIncreasesTheProductQuantity() throws InterruptedException {
+    public void theUserIncreasesTheProductQuantity() {
         cartPage.clickIncrease();
     }
 
     @And("The user decreases the product quantity")
-    public void theUserDecreasesTheProductQuantity() throws InterruptedException {
+    public void theUserDecreasesTheProductQuantity() {
         cartPage.clickDecrease();
     }
 
     @Then("The user clicks the remove button")
-    public void theUserClicksTheRemoveButton() throws InterruptedException {
+    public void theUserClicksTheRemoveButton() {
         cartPage.clickRemove();
+    }
+
+    @Then("The user clicks the logo")
+    public void theUserClicksTheLogo() {
+        cartPage.clickLogo();
     }
 }

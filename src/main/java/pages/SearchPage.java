@@ -27,32 +27,28 @@ public class SearchPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"sticky-aggregations\"]/div/div[4]/div[3]/div/div/div[7]/div/a")
     private WebElement size;
 
-    public void clickSearchBox() throws InterruptedException {
-        Thread.sleep(1500);
-        searchBox.click();
+    public void clickSearchBox() {
+        waitAndClick(searchBox);
         searchBox.sendKeys("elbise");
         searchBox.sendKeys(Keys.ENTER);
     }
 
-    public void clickDressType() throws InterruptedException {
-        Thread.sleep(1500);
+    public void clickDressType() {
         dressType.click();
     }
 
-    public void searchBrand() throws InterruptedException {
-        Thread.sleep(1500);
-        brandSearch.click();
+    public void searchBrand() {
+        waitAndClick(brandSearch);
         brandSearch.clear();
         brandSearch.sendKeys("LC");
     }
 
-    public void selectBrand() throws InterruptedException {
-        Thread.sleep(1500);
-        brandType.click();
+    public void selectBrand() {
+        waitAndClick(brandType);
     }
 
-    public void selectSize() throws InterruptedException {
-        Thread.sleep(1500);
-        size.click();
+    public void selectSize() {
+        scrollToElement(size);
+        waitAndClick(size);
     }
 }

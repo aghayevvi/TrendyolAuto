@@ -5,4 +5,5 @@ Feature: Manage products in the cart
     Given The user clicks on the cart button
     When The user increases the product quantity
     And The user decreases the product quantity
-    Then The user clicks the remove button
+    And The user clicks the remove button
+    Then The user clicks the logo

@@ -17,27 +17,27 @@ public class SearchStep {
     }
 
     @Given("I click on the search box on the homepage")
-    public void clickSearchBox() throws InterruptedException {
+    public void clickSearchBox() {
         searchPage.clickSearchBox();
     }
 
     @And("I click on the Büyük Beden Elbise category on the results page")
-    public void clickCategory() throws InterruptedException {
+    public void clickCategory() {
         searchPage.clickDressType();
     }
 
     @And("I type LC into the brand filter search box")
-    public void searchBrand() throws InterruptedException {
+    public void searchBrand() {
         searchPage.searchBrand();
     }
 
     @And("I select the LC Waikiki brand")
-    public void selectBrand() throws InterruptedException {
+    public void selectBrand() {
         searchPage.selectBrand();
     }
 
     @Then("I select the XS size filter")
-    public void selectSize() throws InterruptedException {
+    public void selectSize() {
         searchPage.selectSize();
     }
 }

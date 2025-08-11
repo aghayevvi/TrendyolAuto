@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(
-        features = "C:/Users/EXIRIM'R_Computer's/IdeaProjects/TrendyolAuto/src/test/Feature/Login.feature",
+        features = "C:/Users/Xantaress/IdeaProjects/TrendyolAuto/src/test/Feature/Login.feature",
         glue = {"stepDefinitions", "config"},
         plugin = {
                 "pretty",

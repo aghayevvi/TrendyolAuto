@@ -20,6 +20,7 @@ public class AdToCartStep {
     @And("The user should be switched to the new tab")
     public void theUserShouldBeSwitchedToTheNewTab() {
         adToCartPage.switchToNewTab();
+        adToCartPage.closeOldTab();
         
     }
 
