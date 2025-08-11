@@ -16,27 +16,27 @@ public class SearchStep {
         searchPage = new SearchPage();
     }
 
-    @Given("I click on the search box on the homepage")
+    @Given("The user on the search box on the homepage")
     public void clickSearchBox() {
         searchPage.clickSearchBox();
     }
 
-    @And("I click on the Büyük Beden Elbise category on the results page")
+    @And("The user on the Büyük Beden Elbise category on the results page")
     public void clickCategory() {
         searchPage.clickDressType();
     }
 
-    @And("I type LC into the brand filter search box")
+    @And("The user LC into the brand filter search box")
     public void searchBrand() {
         searchPage.searchBrand();
     }
 
-    @And("I select the LC Waikiki brand")
+    @And("The user the LC Waikiki brand")
     public void selectBrand() {
         searchPage.selectBrand();
     }
 
-    @Then("I select the XS size filter")
+    @Then("The user the XS size filter")
     public void selectSize() {
         searchPage.selectSize();
     }

@@ -18,20 +18,14 @@ import java.util.Set;
 public class BasePage {
     public WebDriver driver;
     public JavascriptExecutor js;
-    public WebDriverWait wait;  // burada class-level wait tanımlandı
+    public WebDriverWait wait;
 
     public BasePage() {
         this.driver = DriverManager.getChromeDriver();
         this.js = (JavascriptExecutor) driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));  // sadece bir kez oluşturuluyor
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
         PageFactory.initElements(driver, this);
-    }
-
-    public void fillFieldAndEnter(WebElement element, String text) {
-        element.clear();
-        element.sendKeys(text);
-        element.sendKeys(Keys.RETURN);
     }
 
     public void waitAndClick(WebElement element) {
@@ -45,7 +39,7 @@ public class BasePage {
 
     public void scrollToElement(WebElement element) {
         try {
-            wait.until(ExpectedConditions.visibilityOf(element));  // class-level wait kullanılıyor
+            wait.until(ExpectedConditions.visibilityOf(element));
             js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
         } catch (Exception e) {
             throw e;
@@ -62,12 +56,6 @@ public class BasePage {
         }
     }
 
-    public void switchToOriginalTab() {
-        Set<String> windowHandles = driver.getWindowHandles();
-        List<String> windows = new ArrayList<>(windowHandles);
-        driver.switchTo().window(windows.get(0));
-    }
-
     public void closeOldTab() {
         Set<String> windowHandles = driver.getWindowHandles();
         List<String> windowList = new ArrayList<>(windowHandles);
@@ -79,22 +67,5 @@ public class BasePage {
         } else {
             throw new RuntimeException("New tab not found!");
         }
-    }
-
-    public void waitForAjaxToComplete() {
-        wait.until(driver -> ((JavascriptExecutor) driver)
-                .executeScript("return jQuery.active == 0").equals(true));
-    }
-
-    public void waitUntilVisible(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    public void waitUntilClickable(WebElement element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-    public void goBack() {
-        driver.navigate().back();
     }
 }

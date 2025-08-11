@@ -20,19 +20,19 @@ public class LoginStep {
     }
 
 
-    @Given("User opens the site")
+    @Given("The user opens the site")
     public void userOpensTheSite() {
         String firstPage = "https://www.trendyol.com//";
         loginPage.driver.get(firstPage);
         loginPage.driver.manage().window().maximize();
     }
 
-    @When("the user clicks the Login button")
+    @When("The user clicks the Login button")
     public void theUserClicksTheLoginButton() {
         loginPage.clickLoginButton();
     }
 
-    @And("User includes {string} and {string}")
+    @And("The user includes {string} and {string}")
     public void userIncludesAnd(String email, String password) {
         loginPage.enterEmail(email);
         loginPage.enterPassword(password);
